@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 /* Sistema Bancário simples para fins de aprendizado em Java.
  * Permite consultar saldo, depositar, sacar e sair do programa.
  */
@@ -29,7 +30,15 @@ public class SistemaBancario {
          Informe o valor que deseja depositar: R$
          """);
 
-        double valorDeposito = scanner.nextDouble();
+        double valorDeposito;
+
+        try {
+            valorDeposito = scanner.nextDouble();
+        } catch (InputMismatchException e){
+            System.out.println("Entrada inválida! Digite um valor numérico.");
+            scanner.nextLine();
+            return saldo;
+        }
 
         if (valorDeposito <= 0) {
             System.out.println("Valor inválido para depósito.");
@@ -45,7 +54,16 @@ public class SistemaBancario {
          ==== SAQUE ====
          Informe o valor que deseja sacar: R$
          """);
-        double valorSaque = scanner.nextDouble();
+        double valorSaque;
+
+        try {
+            valorSaque = scanner.nextDouble();
+        } catch (InputMismatchException e){
+            System.out.println("Entrada inválida! Digite um valor numérico.");
+            scanner.nextLine();
+            return saldo;
+        }
+
         if(valorSaque <= 0) {
             System.out.println("Valor inválido");
         }
@@ -68,8 +86,14 @@ public class SistemaBancario {
         while (opcao != 4) {
             exibirMenu();
 
-            opcao = scanner.nextInt();
-            scanner.nextLine(); //Evita problemas de buffer ao ler entrada numérica.
+            try {
+                opcao = scanner.nextInt();
+                scanner.nextLine(); //Evita problemas de buffer ao ler entrada numérica.
+            } catch (InputMismatchException e){
+                System.out.println("Entrada inválida! Digite apenas números.");
+                scanner.nextLine(); //Limpa entrada errada
+                continue;
+            }
 
             switch (opcao) {
 
