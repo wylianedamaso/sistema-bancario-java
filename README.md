@@ -26,6 +26,7 @@ Durante o desenvolvimento foram aplicados conceitos fundamentais da linguagem, i
 ## Tecnologias Utilizadas
 
 - Java
+- Intellij IDEA
 - Git
 - GitHub
 
