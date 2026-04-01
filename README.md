@@ -36,10 +36,10 @@ Durante o desenvolvimento foram aplicados conceitos fundamentais da linguagem, i
    git clone https://github.com/wylianedamaso/sistema-bancario-java.git
 
 2. Compile o arquivo: 
-   javac SistemaBancario.java
+   javac br.com.wyliane.sistemabancario.SistemaBancario.java
 
 3. Execute o programa:
-   java SistemaBancario
+   java br.com.wyliane.sistemabancario.SistemaBancario
 
 ## Melhorias Futuras
 
